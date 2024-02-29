@@ -12,10 +12,8 @@ def execute_mysql_query():
 
     # Insert values into the table
     query = "INSERT INTO testing (job_id, job_name) VALUES (%s, %s)"
-    values = [
-        (105, "gulshan"),
-        (106, "arbaz")
-    ]
+    values = 
+        (105, "gulshan")
     cursor.executemany(query, values)  # Use executemany to insert multiple rows
 
     print('Values uploaded')
