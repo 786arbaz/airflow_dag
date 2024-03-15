@@ -19,8 +19,7 @@ dag = DAG(
 mysql_insert_task = PythonOperator(
     task_id='mysql_insert_task',
     python_callable=execute_mysql_query,
-    provide_context=True,  # Set to True if your function requires the context
-    op_args=[mysql_conn_id],  # Pass any additional arguments your function needs
+    op_kwargs={'mysql_conn_id': mysql_conn_id},  # Pass arguments as keyword arguments
     dag=dag,
     retries=3
 )
