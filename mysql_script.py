@@ -14,7 +14,7 @@ def execute_mysql_query(mysql_conn_id):
 
         # Insert values into the table
         query = "INSERT INTO testing (job_id, job_name) VALUES (%s, %s)"
-        values = (170, "shubhhham")
+        values = (130, "shubhham")
         cursor.execute(query, values)
 
         print('Values uploaded')
