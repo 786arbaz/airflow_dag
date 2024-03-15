@@ -1,6 +1,6 @@
 import mysql.connector
 
-def execute_mysql_query():
+def execute_mysql_query(mysql_conn_id):
     # Connect to MySQL
     conn = mysql.connector.connect(
         host="mysqlsrv09.mysql.database.azure.com",
@@ -13,7 +13,7 @@ def execute_mysql_query():
     # Insert values into the table
     query = "INSERT INTO testing (job_id, job_name) VALUES (%s, %s)"
     values = (170, "shubhhham")
-    cursor.executemany(query, values)  # Use executemany to insert multiple rows
+    cursor.execute(query, values)
 
     print('Values uploaded')
 
@@ -22,4 +22,4 @@ def execute_mysql_query():
     conn.close()
 
 if __name__ == "__main__":
-    execute_mysql_query()
+    execute_mysql_query("mysql_conn")
